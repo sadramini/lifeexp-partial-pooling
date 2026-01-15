@@ -1,0 +1,24 @@
+cat > .gitignore << 'EOF'
+# R / RStudio
+.Rhistory
+.RData
+.Rproj.user/
+
+# renv (keep renv.lock, ignore local state)
+renv/library/
+renv/python/
+renv/staging/
+
+# Data
+data/raw/
+
+# Outputs
+outputs/models/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Obsolete
+renv.lock.broken
+EOF

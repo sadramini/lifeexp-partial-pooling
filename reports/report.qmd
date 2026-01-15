@@ -1,0 +1,40 @@
+---
+title: "Bayesian Multilevel Regression with Partial Pooling: Life Expectancy and GDP"
+format: html
+---
+
+## Motivation
+We study how GDP per capita relates to life expectancy across countries and demonstrate the benefit of partial pooling for estimating country-specific baselines.
+
+## Data
+We use Our World in Data:
+- life expectancy (outcome)
+- GDP per capita (predictor)
+
+We focus on a single year to isolate cross-country variation.
+
+## Models
+We compare:
+1. Complete pooling: `y ~ log_gdp`
+2. No pooling (fixed effects): `y ~ log_gdp + country`
+3. Partial pooling (multilevel): `y ~ log_gdp + (1 | country)`
+
+## Priors
+We use weakly informative proper priors (documented in code).
+
+## Results
+Include:
+- scatter + fitted line
+- shrinkage plot
+- LOO comparison
+- posterior predictive checks
+
+## Discussion
+Explain:
+- what α_i represents,
+- how partial pooling shrinks α_i toward μ_α,
+- why this stabilizes estimates,
+- predictive comparison (LOO) as evaluation.
+
+## Limitations
+We model association, not causality.
